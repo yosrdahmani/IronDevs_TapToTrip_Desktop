@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.TransportController">
+   <children>
+      <Label layoutX="116.0" layoutY="72.0" text="TapToTrip Dashboard - Gestion des Transports - Transport" />
+      <Button layoutX="70.0" layoutY="144.0" mnemonicParsing="false" onAction="#ajouterTransport" prefHeight="31.0" prefWidth="123.0" text="Ajouter" />
+      <Button layoutX="70.0" layoutY="195.0" mnemonicParsing="false" onAction="#afficherTransport" prefHeight="31.0" prefWidth="123.0" text="Consulter liste" />
+      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#retourAccueil" text="Retour" />
+      <Label fx:id="pont" layoutX="243.0" layoutY="165.0" prefHeight="21.0" prefWidth="31.0" />
+   </children>
+</AnchorPane>

@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/3A46/pi/Desktop/src/main/main.java</file>
-            <file>file:/E:/3A46/pi/Desktop/src/Services/TransportService.java</file>
-            <file>file:/E:/3A46/pi/Desktop/src/Entities/Transport.java</file>
-            <file>file:/E:/3A46/pi/Desktop/src/Services/CategorieService.java</file>
+            <file>file:/E:/3A46/pi/IronDevs_TapToTrip_Desktop/Desktop/src/Gui/AfficherCategorieController.java</file>
+            <file>file:/E:/3A46/pi/IronDevs_TapToTrip_Desktop/Desktop/src/Gui/CategorieController.java</file>
+            <file>file:/E:/3A46/pi/IronDevs_TapToTrip_Desktop/Desktop/src/Gui/AjouterCategorieController.java</file>
+            <file>file:/E:/3A46/pi/IronDevs_TapToTrip_Desktop/Desktop/src/main/FXmain.java</file>
+            <file>file:/E:/3A46/pi/IronDevs_TapToTrip_Desktop/Desktop/src/Gui/AccueilController.java</file>
+            <file>file:/E:/3A46/pi/IronDevs_TapToTrip_Desktop/Desktop/src/Entities/Categorie.java</file>
+            <file>file:/E:/3A46/pi/IronDevs_TapToTrip_Desktop/Desktop/src/Gui/TransportController.java</file>
         </group>
     </open-files>
 </project-private>
