@@ -51,11 +51,11 @@ public class AccueilController implements Initializable {
     @FXML
     private void categorie(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Categorie.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherCategorie.fxml"));
             Parent root = loader.load();
             pont.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(AccueilController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AfficherCategorieController.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
     

@@ -47,16 +47,16 @@ public class CategorieController implements Initializable {
         }
     }
     
-    @FXML
-    private void ajouterCategorie(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterCategorie.fxml"));
-            Parent root = loader.load();
-            pont.getScene().setRoot(root);
-        } catch (IOException ex) {
-            Logger.getLogger(AjouterCategorieController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+//    @FXML
+//    private void ajouterCategorie(ActionEvent event) {
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterCategorie.fxml"));
+//            Parent root = loader.load();
+//            pont.getScene().setRoot(root);
+//        } catch (IOException ex) {
+//            Logger.getLogger(AjouterCategorieController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
     
     @FXML
     private void afficherCategorie(ActionEvent event) {

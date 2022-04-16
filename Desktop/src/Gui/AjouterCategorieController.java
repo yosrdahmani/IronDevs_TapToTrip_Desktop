@@ -49,11 +49,11 @@ public class AjouterCategorieController implements Initializable {
     @FXML
     private void retourCategorie(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Categorie.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherCategorie.fxml"));
             Parent root = loader.load();
             pont.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(CategorieController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AfficherCategorieController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

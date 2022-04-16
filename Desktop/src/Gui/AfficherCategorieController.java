@@ -40,10 +40,13 @@ public class AfficherCategorieController implements Initializable {
     private AnchorPane pane;
     @FXML
     private TableView<Categorie> listeCategorie;
+    
     @FXML
     private TableColumn<Categorie, String> idCategorie;
+    
     @FXML
     private TableColumn<Categorie, String> nomCategorie;
+    
     @FXML
     private TableColumn<Categorie, String> boiteVitesse;
     
@@ -64,12 +67,22 @@ public class AfficherCategorieController implements Initializable {
         @FXML
     private void retourCategorie(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Categorie.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Accueil.fxml"));
             Parent root = loader.load();
             pont.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(CategorieController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccueilController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
+    @FXML
+    private void ajouterCategorie(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterCategorie.fxml"));
+            Parent root = loader.load();
+            pont.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(AjouterCategorieController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }   
 }
