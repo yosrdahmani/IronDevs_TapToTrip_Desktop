@@ -20,6 +20,6 @@ public interface VService <V> {
     
     public void modifierVoyage(V v, int id);
     
-    public void supprimerVoyage(int id) throws SQLException;
+    public void supprimerVoyage(V v) throws SQLException;
     
 }

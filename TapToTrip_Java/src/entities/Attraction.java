@@ -5,6 +5,8 @@
  */
 package entities;
 
+import javafx.scene.image.ImageView;
+
 /**
  *
  * @author DELL
@@ -14,6 +16,7 @@ public class Attraction {
     //Les attributs
     private int id ;
     private String nom, lieu, description;
+    
     
     //Constructeurs
     //Surchargés
@@ -34,6 +37,7 @@ public class Attraction {
     public Attraction() {
         
     }
+    
     
     //Getters & Setters
     public int getId() {

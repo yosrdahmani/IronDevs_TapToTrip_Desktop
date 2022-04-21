@@ -25,7 +25,7 @@ public class TapToTrip_Java {
         // TODO code application logic here
         
         
-        Attraction A1 = new Attraction("Paris","France","Attraction12 Paris");
+        Attraction A1 = new Attraction("Algerie","France","Attraction12 Paris");
         AttractionService as = new AttractionService();
         
         //Ajouter Attraction
@@ -35,10 +35,10 @@ public class TapToTrip_Java {
         //System.out.println(as.afficherAttractions());
         
         //Modifier Attraction
-        //as.modifierAttraction(A1,13);
+        //as.modifierAttraction(A1,12);
         
         //Supprimer Attraction
-        //as.supprimerAttraction(13);
+        //as.supprimerAttraction(12);
         
         Voyage V1 = new Voyage("Maldives","3Jours","Programme de voyage ...","","hotel 3*","9000 dt",6);
         VoyageService vs = new VoyageService();
@@ -54,7 +54,7 @@ public class TapToTrip_Java {
         //vs.modifierVoyage(V1,7);
         
         //Supprimer Attraction
-        vs.supprimerVoyage(8);
+        //vs.supprimerVoyage(8);
         
     }
         

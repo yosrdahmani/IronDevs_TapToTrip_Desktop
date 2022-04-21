@@ -20,5 +20,5 @@ public interface AService <A> {
     
     public void modifierAttraction(A a, int id);
     
-    public void supprimerAttraction(int id) throws SQLException;
+    public void supprimerAttraction(A a) ;
 }

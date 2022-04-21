@@ -83,13 +83,20 @@ public class AttractionService implements AService<Attraction> {
     }
 
     @Override
-    public void supprimerAttraction(int id) throws SQLException {
-        String req = "DELETE FROM `attraction` WHERE id="+ id;
-        stm = con.createStatement();
-        stm.executeUpdate(req);
-        System.out.println("Attraction supprimée avec succes !");
-        
-    }
+    public void supprimerAttraction(Attraction a) {
+          try {
+            String requete = "DELETE FROM `attraction` WHERE id=?";
+            PreparedStatement pst = con.prepareStatement(requete);
+            pst.setInt(1, a.getId());
+             int row= pst.executeUpdate();
+           
+            if(row>0)
+            System.out.println("attraction supprimée avec succés!");
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+            }
  
 }
 

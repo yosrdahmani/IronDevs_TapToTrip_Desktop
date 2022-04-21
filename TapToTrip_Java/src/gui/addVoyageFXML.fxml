@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="980.0" prefWidth="1439.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddVoyageFXMLController">
+  
+    <children>
+      <AnchorPane prefHeight="980.0" prefWidth="294.0" style="-fx-background-color: #0747A6;">
+         <children>
+            <JFXButton layoutX="57.0" layoutY="110.0" onAction="#dashboard" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+           
+            <Label layoutX="49.0" layoutY="80.0" text="Navigation" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="49.0" layoutY="303.0" text="Gestion" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="49.0" layoutY="429.0" text="Vol" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="49.0" layoutY="535.0" text="Hotel" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="49.0" layoutY="578.0" text="Chambre" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="49.0" layoutY="364.0" text="Utilisateur" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="49.0" layoutY="470.0" text="Billet" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="48.0" layoutY="641.0" onAction="#Voyage" text="Voyage Organisé" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="48.0" layoutY="684.0" onAction="#Attraction" text="Attraction" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="48.0" layoutY="749.0" text="Transport" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="48.0" layoutY="792.0" text="Catégorie" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label fx:id="pont" layoutX="311.0" layoutY="320.0" />
+      <Label layoutX="324.0" layoutY="432.0" text="Destination :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="950.0" layoutY="432.0" text="Durée :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="323.0" layoutY="500.0" text="Programme :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="403.0" layoutY="358.0" text=" Nouveau Voyage Organisé" textFill="#0a0a0a">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Line endX="939.0" endY="-9.0" layoutX="493.0" layoutY="401.0" startX="-174.0" />
+      <Label layoutX="311.0" layoutY="358.0" text=" Ajouter" textFill="#3582e1">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="DestinationVoyage" layoutX="481.0" layoutY="432.0" prefHeight="31.0" prefWidth="294.0" />
+      <TextArea fx:id="ProgrammeVoyage" layoutX="481.0" layoutY="494.0" prefHeight="89.0" prefWidth="294.0" />
+      <Button defaultButton="true" layoutX="678.0" layoutY="859.0" mnemonicParsing="false" onAction="#AjouterVoyage" prefHeight="31.0" prefWidth="195.0" text="Ajouter" />
+      <Button cancelButton="true" layoutX="898.0" layoutY="859.0" mnemonicParsing="false" onAction="#AnnulerAjoutVoyage" prefHeight="31.0" prefWidth="195.0" text="Annuler" />
+      <Hyperlink layoutX="303.0" layoutY="325.0" onAction="#BoutonBack" prefHeight="29.0" prefWidth="153.0" text="&lt;- Revenir à la liste">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Hyperlink>
+      <TextField fx:id="DureeVoyage" layoutX="1081.0" layoutY="432.0" prefHeight="31.0" prefWidth="294.0" />
+      <Label layoutX="316.0" layoutY="726.0" text="Image :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="950.0" layoutY="524.0" text="Hotel :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="324.0" layoutY="643.0" text="Prix : ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="950.0" layoutY="644.0" text="Attraction : ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="ComboBoxAttraction" layoutX="1081.0" layoutY="643.0" prefHeight="31.0" prefWidth="294.0" />
+      <ImageView fitHeight="320.0" fitWidth="1158.0" layoutX="294.0">
+         <image>
+            <Image url="@../Images/bg_1.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="322.0" layoutY="216.0" onAction="#dashboard" text=" Welcome, TapToTrip Dashboard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="61.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/logo2.PNG" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Button fx:id="pont1" layoutX="1262.0" layoutY="32.0" mnemonicParsing="false" onAction="#deconnecter" prefHeight="40.0" prefWidth="171.0" styleClass="search-button" stylesheets="@frontvoyage.css" text="       Se Déconnecter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1262.0" layoutY="32.0">
+         <image>
+            <Image url="@../Images/logout-sign-icon-log-out-symbol-arrow-vector-2682061.png" />
+         </image>
+      </ImageView>
+      <Button defaultButton="true" layoutX="481.0" layoutY="726.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="31.0" prefWidth="294.0" text="upload image" />
+      <ImageView fx:id="ImageVoyage" fitHeight="150.0" fitWidth="294.0" layoutX="1081.0" layoutY="694.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="HotelVoyage" layoutX="1081.0" layoutY="523.0" prefHeight="31.0" prefWidth="294.0" />
+      <TextField fx:id="PrixVoyage" layoutX="481.0" layoutY="643.0" prefHeight="31.0" prefWidth="294.0" />
+   </children>
+</AnchorPane>

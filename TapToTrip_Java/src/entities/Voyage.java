@@ -5,6 +5,8 @@
  */
 package entities;
 
+import javafx.scene.image.ImageView;
+
 /**
  *
  * @author DELL
@@ -14,9 +16,13 @@ public class Voyage {
     //Les attributs 
     private int id;
     private String destination, duree, programme, image, hotel, prix;
+    private ImageView image_attraction;
+    
     
     //Jointure
     private int attraction_id;
+    
+    
     
     //Constructeurs
     //Surchargés
@@ -30,6 +36,8 @@ public class Voyage {
         this.prix = prix;
         this.attraction_id = attraction_id;
     }
+    
+    
 
     public Voyage(String destination, String duree, String programme, String image, String hotel, String prix, int attraction_id) {
         this.destination = destination;
@@ -41,8 +49,48 @@ public class Voyage {
         this.attraction_id = attraction_id;
     }
 
+    public Voyage(int id, String destination, String duree, String programme, String image, String hotel, String prix, int attraction_id, ImageView image_attraction) {
+        this.id = id;
+        this.destination = destination;
+        this.duree = duree;
+        this.programme = programme;
+        this.image = image;
+        this.hotel = hotel;
+        this.prix = prix;
+        this.attraction_id = attraction_id;
+        this.image_attraction = image_attraction;
+    }
+
+    public Voyage(String destination, String duree, String programme, String image, String hotel, String prix, int attraction_id, ImageView image_attraction) {
+        this.destination = destination;
+        this.duree = duree;
+        this.programme = programme;
+        this.image = image;
+        this.hotel = hotel;
+        this.prix = prix;
+        this.attraction_id = attraction_id;
+        this.image_attraction = image_attraction;
+    }
+
+    public Voyage(int id, String destination, String duree, String programme, String hotel, String prix, int attraction_id, ImageView image_attraction) {
+        this.id = id;
+        this.destination = destination;
+        this.duree = duree;
+        this.programme = programme;
+        this.hotel = hotel;
+        this.prix = prix;
+        this.attraction_id = attraction_id;
+        this.image_attraction = image_attraction;
+    }
+    
+    
+    
+    
+
     public Voyage() {
     }
+
+   
     
     //Getters & Setters
     public int getId() {
@@ -108,6 +156,17 @@ public class Voyage {
     public void setAttraction_id(int attraction_id) {
         this.attraction_id = attraction_id;
     }
+
+    public ImageView getImage_attraction() {
+        return image_attraction;
+    }
+
+    public void setImage_attraction(ImageView image_attraction) {
+        this.image_attraction = image_attraction;
+    }
+
+   
+    
     
    
     //Méthode toString
