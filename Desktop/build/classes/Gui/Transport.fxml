@@ -1,15 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.TransportController">
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1061.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.TransportController">
    <children>
-      <Label layoutX="116.0" layoutY="72.0" text="TapToTrip Dashboard - Gestion des Transports - Transport" />
-      <Button layoutX="70.0" layoutY="144.0" mnemonicParsing="false" onAction="#ajouterTransport" prefHeight="31.0" prefWidth="123.0" text="Ajouter" />
-      <Button layoutX="70.0" layoutY="195.0" mnemonicParsing="false" onAction="#afficherTransport" prefHeight="31.0" prefWidth="123.0" text="Consulter liste" />
-      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#retourAccueil" text="Retour" />
-      <Label fx:id="pont" layoutX="243.0" layoutY="165.0" prefHeight="21.0" prefWidth="31.0" />
+      <ImageView fitHeight="285.0" fitWidth="779.0" layoutX="282.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/273591997_1354167371702240_3966120726806432338_n.png" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="804.0" prefWidth="283.0" style="-fx-background-color: #0747A6;">
+         <children>
+            <JFXButton layoutX="57.0" layoutY="110.0" onAction="#dashboard" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="642.0" onAction="#transport" text="Transport" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="CAR" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="47.0" layoutY="574.0" text="Attraction" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <Label layoutX="49.0" layoutY="80.0" text="Navigation" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="45.0" layoutY="208.0" text="Gestion" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="49.0" layoutY="313.0" text="Vol" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="49.0" layoutY="419.0" text="Hotel" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="49.0" layoutY="462.0" text="Chambre" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="49.0" layoutY="248.0" text="Utilisateur" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="47.0" layoutY="531.0" text="Voyage Organisé" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="49.0" layoutY="354.0" text="Billet" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="687.0" onAction="#categorie" text="Categorie" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXButton buttonType="RAISED" layoutX="320.0" layoutY="180.0" onAction="#dashboard" text=" Welcome, TapToTrip Dashboard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="61.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/logo2.PNG" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label fx:id="pont" layoutX="311.0" layoutY="320.0" />
+      <TextField fx:id="matricule" layoutX="549.0" layoutY="614.0" />
+      <TextField fx:id="marque" layoutX="549.0" layoutY="681.0" />
+      <TextField fx:id="model" layoutX="549.0" layoutY="746.0" />
+      <TextField fx:id="siege" layoutX="299.0" layoutY="593.0" />
+      <TextField fx:id="prix" layoutX="299.0" layoutY="705.0" />
+      <Label layoutX="764.0" layoutY="619.0" text="matricule" />
+      <Label layoutX="764.0" layoutY="686.0" text="marque" />
+      <Label layoutX="764.0" layoutY="751.0" text="model" />
+      <Label layoutX="514.0" layoutY="593.0" text="siege" />
+      <Label layoutX="514.0" layoutY="655.0" text="categorie" />
+      <Label layoutX="514.0" layoutY="710.0" text="prix" />
+      <Button layoutX="467.0" layoutY="759.0" mnemonicParsing="false" onAction="#ajouterTransport" text="ajouter" />
+      <HBox layoutX="861.0" layoutY="529.0" prefHeight="150.0" prefWidth="275.0">
+         <children>
+            <ImageView fx:id="imprt" fitHeight="130.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true" />
+            <Button mnemonicParsing="false" onAction="#importerImage" prefHeight="31.0" prefWidth="77.0" text="image" />
+         </children>
+      </HBox>
+      <TableView fx:id="listaa" layoutX="311.0" layoutY="291.0" onMouseClicked="#onClick" prefHeight="238.0" prefWidth="597.0">
+        <columns>
+          <TableColumn fx:id="matri" prefWidth="75.0" text="matricule" />
+            <TableColumn fx:id="marq" prefWidth="78.0" text="marque" />
+            <TableColumn fx:id="mod" prefWidth="61.0" text="modele" />
+            <TableColumn fx:id="sieg" prefWidth="83.0" text="siege" />
+            <TableColumn fx:id="catg" prefWidth="68.0" text="categorie" />
+            <TableColumn fx:id="user" prefWidth="68.0" text="user" />
+            <TableColumn fx:id="id" prefWidth="62.0" text="id" />
+            <TableColumn fx:id="pri" prefWidth="62.0" text="prix" />
+        </columns>
+      </TableView>
+      <ImageView fx:id="im" fitHeight="150.0" fitWidth="200.0" layoutX="732.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="combo" layoutX="326.0" layoutY="650.0" prefWidth="150.0" />
+      <ImageView fx:id="affichageImage" fitHeight="197.0" fitWidth="163.0" layoutX="949.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="882.0" layoutY="746.0" mnemonicParsing="false" onAction="#modifierTransport" text="modifier" />
+      <Button layoutX="1028.0" layoutY="744.0" mnemonicParsing="false" onAction="#supprimerTransport" text="supprimer" />
    </children>
 </AnchorPane>

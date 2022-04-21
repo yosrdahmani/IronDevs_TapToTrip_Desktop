@@ -33,7 +33,7 @@ public class TransportService implements IService<Transport> {
     @Override
     public void ajouter(Transport transport) {
         try {
-            String req="INSERT INTO `transport`(`matricule`, `marque`, `modele`, `nbsiege`, `categorie_id`, `user_id`, `prix`) VALUES ('"+ transport.getMatricule() +"','"+ transport.getMarque() +"','"+ transport.getModele() +"','"+ transport.getNbSiege() +"','"+ transport.getCategorie() +"','"+ transport.getUser() +"','"+ transport.getPrix() +"')";
+            String req="INSERT INTO `transport`(`matricule`, `image`, `marque`, `modele`, `nbsiege`, `categorie_id`, `prix`) VALUES ('"+ transport.getMatricule() +"','"+ transport.getImage() +"','"+ transport.getMarque() +"','"+ transport.getModele() +"','"+ transport.getNbSiege() +"','"+ transport.getCategorie() +"','"+ transport.getPrix() +"')";
             stmm = con.createStatement();
             stmm.executeUpdate(req); 
             System.out.println("Transport ajouté");
@@ -53,7 +53,7 @@ public class TransportService implements IService<Transport> {
             ResultSet rst = stmm.executeQuery(req);
            
             while (rst.next()) {
-                Transport t = new Transport(rst.getInt("Id"),rst.getString("matricule"),rst.getString("marque"),rst.getString("modele"),rst.getInt("nbSiege"),rst.getInt("categorie_id"),rst.getInt("user_id"),rst.getDouble("prix"));
+                Transport t = new Transport(rst.getInt("id"),rst.getString("matricule"),rst.getString("image"),rst.getString("marque"),rst.getString("modele"),rst.getInt("nbSiege"),rst.getInt("categorie_id"),rst.getInt("user_id"),rst.getDouble("prix"));
                 transports.add(t);   
             }
            
@@ -68,7 +68,8 @@ public class TransportService implements IService<Transport> {
     @Override
     public void modifier(Transport transport){
         try {
-            String req="UPDATE `transport` SET `matricule`='"+ transport.getMatricule() +"',`marque`='"+ transport.getMarque() +"',`modele`='"+ transport.getModele() +"',`nbsiege`='"+ transport.getNbSiege() +"',`categorie_id`='"+ transport.getCategorie() +"',`user_id`='"+ transport.getUser() +"',`prix`='"+ transport.getPrix() +"' WHERE `id`='"+ transport.getId() +"'";
+            System.out.println("*******************"+transport.toString());
+            String req="UPDATE `transport` SET `matricule`='"+ transport.getMatricule() +"',`image`='"+ transport.getImage()+"',`marque`='"+ transport.getMarque() +"',`modele`='"+ transport.getModele() +"',`nbsiege`='"+ transport.getNbSiege() +"',`categorie_id`='"+ transport.getCategorie() +"',`prix`='"+ transport.getPrix() +"' WHERE `id`='"+ transport.getId() +"'";
             stmm = con.createStatement();
             stmm.executeUpdate(req); 
             System.out.println("Transport modifié");
@@ -93,5 +94,23 @@ public class TransportService implements IService<Transport> {
         }catch (SQLException ex) {
             System.out.println(ex.getMessage());;
         }
+    }
+    
+     public boolean chercherMatriculeTransport(String matricule)  {
+        String req = "SELECT `matricule` FROM `transport`";
+        List<String> list = new ArrayList<>();
+        
+        try {
+            stmm = con.createStatement();
+            ResultSet rst = stmm.executeQuery(req);
+            while(rst.next()){
+                list.add(rst.getString(1));
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategorieService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
+        return list.contains(matricule);
     }
 }

@@ -24,8 +24,19 @@ public class main {
         
         //Transport t1 = new Transport("test","test1","test2",20,19,1,20);
         
-        TransportService ps = new TransportService();
-                         
-        System.out.println(ps.afficher());
+        TransportService ts = new TransportService();
+//                         
+//        System.out.println(ps.afficher());
+//        
+//        Categorie c = new Categorie(19,"dog","dog");
+//        
+        CategorieService cs = new CategorieService();
+        
+//        cs.modifier(c);
+
+            //cs.chercherNomCategorie("yosr");
+            //System.out.println(cs.chercherNomCategorie("Automatique"));
+            
+            System.out.println(ts.chercherMatriculeTransport("yomn"));
     }
 }

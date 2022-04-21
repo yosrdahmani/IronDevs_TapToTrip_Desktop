@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.TransportFrontController">
+   <children>
+      <ImageView fx:id="imageTransport" fitHeight="158.0" fitWidth="271.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </ImageView>
+      <AnchorPane prefHeight="224.0" prefWidth="300.0">
+         <children>
+            <Label layoutX="14.0" layoutY="112.0" text="Siege" />
+            <Label layoutX="14.0" layoutY="4.0" text="Matricule" />
+            <Label layoutX="14.0" layoutY="41.0" text="Marque" />
+            <Label layoutX="14.0" layoutY="75.0" text="Modele" />
+            <Label layoutX="16.0" layoutY="151.0" text="Prix" />
+            <Label layoutX="16.0" layoutY="188.0" text="Categorie" />
+            <Label fx:id="matriculeTransport" layoutX="133.0" layoutY="4.0" />
+            <Label fx:id="marqueTransport" layoutX="133.0" layoutY="41.0" />
+            <Label fx:id="modeleTransport" layoutX="133.0" layoutY="75.0" />
+            <Label fx:id="nbSiegeTransport" layoutX="133.0" layoutY="112.0" />
+            <Label fx:id="prixTransport" layoutX="133.0" layoutY="151.0" />
+            <Label fx:id="categorieTransport" layoutX="133.0" layoutY="188.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

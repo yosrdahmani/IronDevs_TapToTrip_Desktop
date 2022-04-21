@@ -5,6 +5,8 @@
  */
 package Entities;
 
+import javafx.scene.image.ImageView;
+
 /**
  *
  * @author lenovo
@@ -12,12 +14,18 @@ package Entities;
 public class Transport {
     private int id;
     private String matricule;
+    private String image;
     private String marque;
     private String modele;
     private int nbSiege;
     private int categorie;
     private int user;
     private double prix;
+    
+    
+    public Transport() {
+        
+    }
 
     public Transport(int id, String matricule, String marque, String modele, int nbSiege, int categorie, int user, double prix) {
         this.id = id;
@@ -38,9 +46,34 @@ public class Transport {
         this.categorie = categorie;
         this.user = user;
         this.prix = prix;
+    } 
+
+    public Transport(int id, String matricule, String image, String marque, String modele, int nbSiege, int categorie, int user, ImageView photo) {
+        this.id = id;
+        this.matricule = matricule;
+        this.image = image;
+        this.marque = marque;
+        this.modele = modele;
+        this.nbSiege = nbSiege;
+        this.categorie = categorie;
+        this.user = user;
+ //       this.photo = photo;
     }
 
+    public Transport(int id, String matricule, String image, String marque, String modele, int nbSiege, int categorie, int user, double prix) {
+        this.id = id;
+        this.matricule = matricule;
+        this.image = image;
+        this.marque = marque;
+        this.modele = modele;
+        this.nbSiege = nbSiege;
+        this.categorie = categorie;
+        this.user = user;
+        this.prix = prix;
+    }
     
+    
+
     
     
     public int getId() {
@@ -57,6 +90,14 @@ public class Transport {
 
     public void setMatricule(String matricule) {
         this.matricule = matricule;
+    }
+    
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getMarque() {
@@ -83,7 +124,7 @@ public class Transport {
         this.nbSiege = nbSiege;
     }
     
-    public double getCategorie() {
+    public int getCategorie() {
         return categorie;
     }
 
@@ -109,6 +150,8 @@ public class Transport {
 
     @Override
     public String toString() {
-        return "Transport{" + "id=" + id + ", matricule=" + matricule + ", marque=" + marque + ", modele=" + modele + ", nbSiege=" + nbSiege + ", categorie=" + categorie + ", user=" + user + ", prix=" + prix + '}';
+        return "Transport{" + "id=" + id + ", matricule=" + matricule + ", image=" + image + ", marque=" + marque + ", modele=" + modele + ", nbSiege=" + nbSiege + ", categorie=" + categorie + ", user=" + user + ", prix=" + prix + '}';
     }
+
+    
 }
