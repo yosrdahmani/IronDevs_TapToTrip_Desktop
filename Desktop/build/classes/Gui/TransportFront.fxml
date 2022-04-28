@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.TransportFrontController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.TransportFrontController">
    <children>
-      <ImageView fx:id="imageTransport" fitHeight="158.0" fitWidth="271.0" pickOnBounds="true" preserveRatio="true">
-         <VBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </VBox.margin>
-      </ImageView>
-      <AnchorPane prefHeight="224.0" prefWidth="300.0">
+      <AnchorPane prefHeight="449.0" prefWidth="418.0">
          <children>
-            <Label layoutX="14.0" layoutY="112.0" text="Siege" />
-            <Label layoutX="14.0" layoutY="4.0" text="Matricule" />
-            <Label layoutX="14.0" layoutY="41.0" text="Marque" />
-            <Label layoutX="14.0" layoutY="75.0" text="Modele" />
-            <Label layoutX="16.0" layoutY="151.0" text="Prix" />
-            <Label layoutX="16.0" layoutY="188.0" text="Categorie" />
-            <Label fx:id="matriculeTransport" layoutX="133.0" layoutY="4.0" />
-            <Label fx:id="marqueTransport" layoutX="133.0" layoutY="41.0" />
-            <Label fx:id="modeleTransport" layoutX="133.0" layoutY="75.0" />
-            <Label fx:id="nbSiegeTransport" layoutX="133.0" layoutY="112.0" />
-            <Label fx:id="prixTransport" layoutX="133.0" layoutY="151.0" />
-            <Label fx:id="categorieTransport" layoutX="133.0" layoutY="188.0" />
+            <ImageView fx:id="imageTransport" fitHeight="182.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="26.0" layoutY="248.0" text="Modele" />
+            <Label fx:id="modeleTransport" layoutX="120.0" layoutY="249.0" prefHeight="21.0" prefWidth="58.0" />
+            <Button fx:id="aimerButton" layoutX="114.0" layoutY="396.0" mnemonicParsing="false" onAction="#aimer" text="aimer" />
+            <Label layoutX="33.0" layoutY="309.0" text="Prix" />
+            <Label fx:id="prixTransport" layoutX="126.0" layoutY="309.0" />
+            <Label layoutX="23.0" layoutY="358.0" text="Categorie" />
+            <Label fx:id="categorieTransport" layoutX="120.0" layoutY="358.0" />
+            <Button fx:id="reserverButton" layoutX="15.0" layoutY="396.0" mnemonicParsing="false" onAction="#reserver" text="réserver" />
+            <Label layoutX="33.0" layoutY="284.0" text="Siege" />
+            <Label fx:id="nbSiegeTransport" layoutX="103.0" layoutY="284.0" />
+            <Label fx:id="matriculeTransport" layoutX="96.0" layoutY="212.0" prefHeight="21.0" prefWidth="37.0" />
+            <Label layoutX="24.0" layoutY="212.0" text="Matricule" />
+            <Label layoutX="25.0" layoutY="329.0" text="Marque" />
+            <Label fx:id="marqueTransport" layoutX="109.0" layoutY="329.0" />
+            <AnchorPane fx:id="anchoraa" layoutX="253.0" layoutY="-1.0" prefHeight="449.0" prefWidth="123.0">
+               <children>
+                  <AnchorPane fx:id="anchorVerif" layoutX="-85.0" layoutY="3.0" prefHeight="256.0" prefWidth="210.0">
+                     <children>
+                        <Label layoutX="16.0" layoutY="22.0" text="id billet" />
+                        <DatePicker fx:id="dateverif" layoutX="15.0" layoutY="157.0" prefHeight="31.0" prefWidth="187.0" />
+                        <Button layoutX="81.0" layoutY="211.0" mnemonicParsing="false" onAction="#verifBillet" text="ok" />
+                        <TextField fx:id="idBillet" layoutX="15.0" layoutY="51.0" prefHeight="31.0" prefWidth="187.0" />
+                        <Label layoutX="14.0" layoutY="118.0" text="date billet" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorPaye" layoutX="-88.0" layoutY="255.0" prefHeight="190.0" prefWidth="219.0">
+                     <children>
+                        <Button layoutX="77.0" layoutY="141.0" mnemonicParsing="false" onAction="#payer" text="Button" />
+                        <TextField fx:id="numCarte" layoutX="16.0" layoutY="57.0" />
+                        <Label layoutX="14.0" layoutY="22.0" text="carte bancaire " />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

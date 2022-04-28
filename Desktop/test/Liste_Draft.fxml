@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="657.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.ListeController">
+   <children>
+      <AnchorPane fx:id="anchorAffiche" layoutX="95.0" layoutY="82.0" prefHeight="631.0" prefWidth="962.0">
+         <children>
+            <ScrollPane layoutX="19.0" layoutY="23.0" prefHeight="608.0" prefWidth="912.0">
+               <content>
+                  <GridPane fx:id="transportContainer">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorTri" layoutX="95.0" layoutY="82.0" prefHeight="631.0" prefWidth="962.0">
+         <children>
+            <ScrollPane layoutX="19.0" layoutY="23.0" prefHeight="608.0" prefWidth="912.0">
+               <content>
+                  <GridPane fx:id="triContainer">
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Button mnemonicParsing="false" onAction="#chercherSiege" text="chercher" />
+      <TextField fx:id="chercherSiege" layoutX="95.0" layoutY="39.0" />
+      <Button layoutY="91.0" mnemonicParsing="false" onAction="#favoris" text="favoris" />
+      <Button layoutX="7.0" layoutY="166.0" mnemonicParsing="false" onAction="#reserves" text="reservés" />
+   </children>
+</AnchorPane>

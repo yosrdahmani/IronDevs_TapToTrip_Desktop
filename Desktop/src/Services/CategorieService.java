@@ -145,5 +145,32 @@ public class CategorieService implements IService<Categorie> {
         }
        return 0;        
     }
+       
+    public List<Categorie> afficherByBoiteVitesse (String boiteVitesse) {
+        List<Categorie> categories = new ArrayList<>();
+        String req = "select * from categorie where boitevitesse =?";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = con.prepareStatement(req);
+            preparedStatement.setString(1, boiteVitesse);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Categorie c = new Categorie(resultSet.getInt("id"), resultSet.getString("nom"), resultSet.getString("boiteVitesse"));
+                categories.add(c);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+                
+        return categories;
+    }   
+    
+    public int findNumberUsersByCategorieName(String nom){
+        
+        int idCategorie = getIdCategorie(nom);
+        TransportService ts = new TransportService();
+        return ts.findNumberUserByCategorieId(idCategorie);
+    
+    }
 }
 

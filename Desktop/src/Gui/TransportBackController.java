@@ -6,6 +6,7 @@
 package Gui;
 
 import Entities.Categorie;
+import Entities.Mail;
 import Entities.Transport;
 import Services.CategorieService;
 import Services.TransportService;
@@ -50,6 +51,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -68,7 +70,7 @@ import javafx.util.StringConverter;
  *
  * @author lenovo
  */
-public class TransportController implements Initializable {
+public class TransportBackController implements Initializable {
 
     @FXML
     private Label pont;
@@ -114,6 +116,8 @@ public class TransportController implements Initializable {
     private ImageView affichageImage;
     
     private int transportId;
+    @FXML
+    private TextField rechSiege;
 
     /**
      * Initializes the controller class.
@@ -141,7 +145,7 @@ public class TransportController implements Initializable {
     @FXML
     private void transport(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Transport.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TransportBack.fxml"));
             Parent root = loader.load();
             pont.getScene().setRoot(root);
         } catch (IOException ex) {
@@ -152,11 +156,11 @@ public class TransportController implements Initializable {
     @FXML
     private void categorie(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Categorie.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CategorieBack.fxml"));
             Parent root = loader.load();
             pont.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(CategorieController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategorieBackController.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
 
@@ -206,11 +210,16 @@ public class TransportController implements Initializable {
                     }
                     else {
                         ts.ajouter(t);
+                        afficherListeTransport();
+                        matricule.setText("");
+                        marque.setText("");
+                        model.setText("");
+                        siege.setText("");
+                        prix.setText("");
                     } 
                 }
             }
         }
-        afficherListeTransport();
     }
     
     @FXML
@@ -256,7 +265,11 @@ public class TransportController implements Initializable {
             }
         }
         afficherListeTransport();
-        
+        matricule.setText("");
+        marque.setText("");
+        model.setText("");
+        siege.setText("");
+        prix.setText("");
     }
 
     @FXML
@@ -275,7 +288,7 @@ public class TransportController implements Initializable {
             try {
                 Files.copy(srcPath, destPath, StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException ex) {
-                Logger.getLogger(TransportController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(TransportBackController.class.getName()).log(Level.SEVERE, null, ex);
             }
             System.out.println(srcPath.toString());
             Image i = new Image(fc.getAbsoluteFile().toURI().toString());
@@ -291,7 +304,7 @@ public class TransportController implements Initializable {
             CategorieService cs = new CategorieService();
             String categorieNom;
             
-        List <Transport> transports = ts.afficher();
+        List <Transport> transports = ts.afficherAll();
       
         ObservableList list = FXCollections.observableArrayList(transports);
     
@@ -327,7 +340,7 @@ public class TransportController implements Initializable {
     }
         
         
-        private void afficherCategoriesNom() {
+    private void afficherCategoriesNom() {
         CategorieService cs = new CategorieService();
         List<Categorie> fcts = cs.afficher();
         ObservableList<String> nomCategories = FXCollections.observableArrayList();
@@ -347,7 +360,6 @@ public class TransportController implements Initializable {
         Path destPath= fileSys.getPath("E:\\3A46\\pi\\transport\\"+t.getImage());
         Image i = new Image(destPath.toAbsolutePath().toUri().toString());
         affichageImage.setImage(i);
-        
         matricule.setText(t.getMatricule());
         marque.setText(t.getMarque());
         model.setText(t.getModele());
@@ -374,10 +386,71 @@ public class TransportController implements Initializable {
         t.setImage(img);
         t.setPrix(Double.parseDouble(prix.getText()));
         
-       ts.supprimer(t);
+        ts.supprimer(t);
        
-       afficherListeTransport();
+        afficherListeTransport();
+        matricule.setText("");
+        marque.setText("");
+        model.setText("");
+        siege.setText("");
+        prix.setText("");
     }
-                
 
+    @FXML
+    private void SeConnecter(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListeTransportFront.fxml"));
+            Parent root = loader.load();
+            pont.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ListeTransportFrontController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void chercherSiege(ActionEvent event) {
+        TransportService ts = new TransportService();
+        System.out.println(rechSiege.getText());
+        List <Transport> transports = ts.afficherByNbSiege(rechSiege.getText());
+        ObservableList list = FXCollections.observableArrayList(transports);
+    
+        matri.setCellValueFactory(new PropertyValueFactory<>("matricule"));
+        marq.setCellValueFactory(new PropertyValueFactory<>("marque"));
+        mod.setCellValueFactory(new PropertyValueFactory<>("modele"));
+        sieg.setCellValueFactory(new PropertyValueFactory<>("nbSiege"));
+        catg.setCellValueFactory(new PropertyValueFactory<>("categorie"));
+        user.setCellValueFactory(new PropertyValueFactory<>("user"));
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        pri.setCellValueFactory(new PropertyValueFactory<>("prix"));
+        listaa.setItems(list);
+    }
+
+    @FXML
+    private void trier(ActionEvent event) {
+        TransportService ts = new TransportService();
+        CategorieService cs = new CategorieService();
+                    
+        List <Transport> transports = ts.afficherByPrix();
+        ObservableList list = FXCollections.observableArrayList(transports);
+        matri.setCellValueFactory(new PropertyValueFactory<>("matricule"));
+        marq.setCellValueFactory(new PropertyValueFactory<>("marque"));
+        mod.setCellValueFactory(new PropertyValueFactory<>("modele"));
+        sieg.setCellValueFactory(new PropertyValueFactory<>("nbSiege"));
+        catg.setCellValueFactory(new PropertyValueFactory<>("categorie"));
+        user.setCellValueFactory(new PropertyValueFactory<>("user"));
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        pri.setCellValueFactory(new PropertyValueFactory<>("prix"));
+        listaa.setItems(list);
+    }
+
+    @FXML
+    private void afficher(ActionEvent event) {
+        afficherListeTransport();
+    }
+
+    @FXML
+    private void fermer(ActionEvent event) {
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
 }

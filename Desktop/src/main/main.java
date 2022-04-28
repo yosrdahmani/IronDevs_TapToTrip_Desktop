@@ -6,8 +6,11 @@
 package main;
 
 import Entities.Categorie;
+import Entities.CompteBancaire;
 import Entities.Transport;
+import Services.BilletService;
 import Services.CategorieService;
+import Services.CompteBancaireService;
 import Services.TransportService;
 import util.MyDB;
 
@@ -37,6 +40,25 @@ public class main {
             //cs.chercherNomCategorie("yosr");
             //System.out.println(cs.chercherNomCategorie("Automatique"));
             
-            System.out.println(ts.chercherMatriculeTransport("yomn"));
+            //System.out.println(ts.afficher());
+            
+            //BilletService bs = new BilletService ();
+            
+            //System.out.println(bs.getDateBilletByUser(2));
+            
+//            CompteBancaireService cbs = new CompteBancaireService();
+//            
+//            System.out.println(cbs.getSoldeByUser(2));
+
+            System.out.println(ts.getPrixById(70));
+            
+            CompteBancaireService cbs = new CompteBancaireService();
+            
+            CompteBancaire cb = new CompteBancaire();
+            
+            cb = new CompteBancaire(1,1400);
+            
+            cbs.modifier(cb);
+            
     }
 }

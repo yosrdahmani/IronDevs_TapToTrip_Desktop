@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.SendMailController">
+   <children>
+      <Label layoutX="99.0" layoutY="39.0" prefHeight="36.0" prefWidth="156.0" text="Send Mail" underline="true">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="sujet" labelFloat="true" layoutX="156.0" layoutY="216.0" prefHeight="36.0" prefWidth="481.0" promptText="Subject" unFocusColor="#750101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextArea fx:id="description" labelFloat="true" layoutX="156.0" layoutY="319.0" prefHeight="235.0" prefWidth="481.0" promptText="Description" unFocusColor="#750101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextArea>
+      <JFXButton fx:id="EnvoyerReclamation" layoutX="666.0" layoutY="570.0" onAction="#envoyer" prefHeight="25.0" prefWidth="80.0" text="Send" textFill="#750101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="To" labelFloat="true" layoutX="156.0" layoutY="157.0" prefHeight="36.0" prefWidth="292.0" promptText="Send to" unFocusColor="#750101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="651.0" layoutY="63.0" onAction="#back" prefHeight="25.0" prefWidth="105.0" text="Back" textFill="#8d0707" />
+   </children>
+</AnchorPane>

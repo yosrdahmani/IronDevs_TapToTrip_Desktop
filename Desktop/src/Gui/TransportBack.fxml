@@ -11,11 +11,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1061.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.CategorieController">
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.TransportBackController">
    <children>
-      <ImageView fitHeight="285.0" fitWidth="779.0" layoutX="282.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="282.0" fitWidth="809.0" layoutX="294.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/273591997_1354167371702240_3966120726806432338_n.png" />
          </image>
@@ -112,6 +113,7 @@
                   <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="30" />
                </graphic>
             </JFXButton>
+            <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#SeConnecter" text="front" />
          </children>
       </AnchorPane>
       <JFXButton buttonType="RAISED" layoutX="320.0" layoutY="180.0" onAction="#dashboard" text=" Welcome, TapToTrip Dashboard" textFill="WHITE">
@@ -127,17 +129,45 @@
          </graphic>
       </JFXButton>
       <Label fx:id="pont" layoutX="311.0" layoutY="320.0" />
-      <TableView fx:id="listeCategorie" layoutX="389.0" layoutY="313.0" onMouseClicked="#onClick" prefHeight="391.0" prefWidth="469.0">
-         <columns>
-            <TableColumn fx:id="idCategorie" prefWidth="126.0" text="Identifiant" />
-            <TableColumn fx:id="nomCategorie" minWidth="0.0" prefWidth="188.0" text="Nom" />
-            <TableColumn fx:id="boiteVitesse" minWidth="0.0" prefWidth="154.0" text="Boite vitesse" />
-         </columns>
+      <TextField fx:id="matricule" layoutX="320.0" layoutY="625.0" />
+      <TextField fx:id="marque" layoutX="320.0" layoutY="696.0" />
+      <TextField fx:id="model" layoutX="320.0" layoutY="764.0" />
+      <TextField fx:id="siege" layoutX="565.0" layoutY="625.0" />
+      <TextField fx:id="prix" layoutX="565.0" layoutY="763.0" />
+      <Label layoutX="320.0" layoutY="599.0" text="matricule" />
+      <Label layoutX="320.0" layoutY="667.0" text="marque" />
+      <Label layoutX="324.0" layoutY="737.0" text="model" />
+      <Label layoutX="564.0" layoutY="599.0" text="siege" />
+      <Label layoutX="569.0" layoutY="665.0" text="categorie" />
+      <Label layoutX="569.0" layoutY="735.0" text="prix" />
+      <Button layoutX="304.0" layoutY="325.0" mnemonicParsing="false" onAction="#ajouterTransport" text="ajouter" />
+      <HBox layoutX="769.0" layoutY="622.0" prefHeight="150.0" prefWidth="219.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#importerImage" prefHeight="31.0" prefWidth="77.0" text="image" />
+            <ImageView fx:id="imprt" fitHeight="151.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <TableView fx:id="listaa" layoutX="304.0" layoutY="365.0" onMouseClicked="#onClick" prefHeight="221.0" prefWidth="593.0">
+        <columns>
+          <TableColumn fx:id="matri" prefWidth="84.0" text="matricule" />
+            <TableColumn fx:id="marq" prefWidth="85.0" text="marque" />
+            <TableColumn fx:id="mod" prefWidth="83.0" text="modele" />
+            <TableColumn fx:id="sieg" prefWidth="61.0" text="siege" />
+            <TableColumn fx:id="catg" prefWidth="84.0" text="categorie" />
+            <TableColumn fx:id="user" prefWidth="58.0" text="user" />
+            <TableColumn fx:id="id" prefWidth="59.0" text="id" />
+            <TableColumn fx:id="pri" prefWidth="76.0" text="prix" />
+        </columns>
       </TableView>
-      <Button layoutX="356.0" layoutY="724.0" mnemonicParsing="false" onAction="#ajouterCategorie" text="ajouter" />
-      <TextField fx:id="nom" layoutX="867.0" layoutY="493.0" />
-      <Button layoutX="480.0" layoutY="732.0" mnemonicParsing="false" onAction="#modifierCategorie" text="modifier" />
-      <Button layoutX="655.0" layoutY="740.0" mnemonicParsing="false" onAction="#supprimerCategorie" text="supprimer" />
-      <ComboBox fx:id="boite" layoutX="886.0" layoutY="625.0" prefWidth="150.0" />
+      <ImageView fx:id="im" fitHeight="150.0" fitWidth="200.0" layoutX="732.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="combo" layoutX="565.0" layoutY="694.0" prefWidth="150.0" />
+      <ImageView fx:id="affichageImage" fitHeight="197.0" fitWidth="150.0" layoutX="911.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="414.0" layoutY="326.0" mnemonicParsing="false" onAction="#modifierTransport" text="modifier" />
+      <Button layoutX="525.0" layoutY="326.0" mnemonicParsing="false" onAction="#supprimerTransport" text="supprimer" />
+      <TextField fx:id="rechSiege" layoutX="684.0" layoutY="326.0" prefHeight="31.0" prefWidth="137.0" promptText="Nombre de siege" />
+      <Button layoutX="820.0" layoutY="326.0" mnemonicParsing="false" onAction="#chercherSiege" text="chercher" />
+      <Button layoutX="819.0" layoutY="289.0" mnemonicParsing="false" onAction="#trier" text="Trier prix" />
+      <Button layoutX="305.0" layoutY="289.0" mnemonicParsing="false" onAction="#afficher" text="afficher" />
+      <Button layoutX="1082.0" layoutY="12.0" mnemonicParsing="false" onAction="#fermer" text="X" />
    </children>
 </AnchorPane>
