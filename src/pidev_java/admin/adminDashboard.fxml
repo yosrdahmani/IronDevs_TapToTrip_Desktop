@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="946.0" style="-fx-background-color: white;" stylesheets="@StyleAjoutE.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev_java.admin.AdminDashboardController">
+   <children>
+      <Label layoutX="381.0" layoutY="35.0" text="Liste des utilisateurs" textFill="#1e85f1">
+         <font>
+            <Font name="Cambria Bold" size="35.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_addUser" layoutX="627.0" layoutY="93.0" mnemonicParsing="false" onAction="#BtnAaddUser" stylesheets="@StyleAjout.css" text="Ajouter">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Button>
+      <Button fx:id="btn_lock" layoutX="716.0" layoutY="93.0" mnemonicParsing="false" onAction="#BtnLock" stylesheets="@StyleAjout.css" text="Activer/désactiver">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Button>
+      <TableView fx:id="tableUsers" cacheShape="false" centerShape="false" fixedCellSize="0.0" focusTraversable="false" layoutX="45.0" layoutY="142.0" pickOnBounds="false" prefHeight="390.0" prefWidth="828.0" scaleShape="false" stylesheets="@StyleTable.css">
+        <columns>
+          <TableColumn fx:id="ColNom" editable="false" minWidth="-1.0" prefWidth="219.0" text="Nom" />
+          <TableColumn fx:id="ColPrenom" prefWidth="183.0" text="Prenom" />
+            <TableColumn fx:id="ColEmail" minWidth="0.0" prefWidth="132.0" text="email" />
+            <TableColumn fx:id="ColNum" prefWidth="131.0" text="numéro de téléphone" />
+            <TableColumn fx:id="ColState" prefWidth="83.0" text="state" />
+            <TableColumn fx:id="ColRole" prefWidth="75.0" text="Role" />
+        </columns>
+        
+      </TableView>
+      <Button fx:id="btn_refresh" layoutX="542.0" layoutY="93.0" mnemonicParsing="false" onAction="#BtnRefresh" stylesheets="@StyleAjout.css" text="Refresh">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txt_nom" layoutX="45.0" layoutY="95.0" onKeyPressed="#SearchByName" promptText="Recherche par nom..." />
+   </children>
+</AnchorPane>

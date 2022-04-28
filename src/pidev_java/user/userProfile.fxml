@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="2200.0" prefWidth="1601.0" stylesheets="@../../styles/Styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev_java.user.userProfileController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="146.0" prefWidth="1602.0" styleClass="profile_topbar" stylesheets="@../../styles/Styles.css">
+         <children>
+            <Circle fx:id="image" fill="DODGERBLUE" layoutX="125.0" layoutY="75.0" radius="54.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="nomprenom" layoutX="194.0" layoutY="46.0" prefHeight="18.0" prefWidth="282.0" styleClass="profile_nom_text" stylesheets="@../../styles/Styles.css" text="Label">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label fx:id="email" layoutX="194.0" layoutY="83.0" prefHeight="18.0" prefWidth="282.0" styleClass="profile_text" stylesheets="@../../styles/Styles.css" text="Label">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="1371.0" prefWidth="1602.0">
+         <children>
+            <VBox layoutX="68.0" layoutY="21.0" prefHeight="1319.0" prefWidth="1458.0">
+               <children>
+                  <Label prefHeight="48.0" prefWidth="155.0" styleClass="profile_edit_titre" text="Nom d'utilisateur">
+                     <padding>
+                        <Insets bottom="10.0" top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" styleClass="profile_edit_sous_titre" text="Changer votre Nom" textFill="#383838">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tf_nom" prefHeight="0.0" styleClass="profile_edit_tf">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="10.0" styleClass="profile_edit_titre" text="Prenom d'utilisateur">
+                     <padding>
+                        <Insets bottom="10.0" top="30.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="55.0" styleClass="profile_edit_sous_titre" text="Changer votre Prenom" textFill="#383838">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tf_prenom" layoutX="10.0" layoutY="77.0" prefHeight="0.0" styleClass="profile_edit_tf">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="108.0" styleClass="profile_edit_titre" text="Email d'utilisateur">
+                     <padding>
+                        <Insets bottom="10.0" top="30.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="153.0" styleClass="profile_edit_sous_titre" text="Changer votre Email" textFill="#383838">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tf_email" layoutX="10.0" layoutY="176.0" prefHeight="0.0" styleClass="profile_edit_tf">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="207.0" styleClass="profile_edit_titre" text="Numéro de telephone de l'utilisateur">
+                     <padding>
+                        <Insets bottom="10.0" top="30.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="252.0" styleClass="profile_edit_sous_titre" text="Changer votre numéro de telephone" textFill="#383838">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tf_numtel" layoutX="10.0" layoutY="274.0" prefHeight="0.0" styleClass="profile_edit_tf">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="797.0" styleClass="profile_edit_titre" text="Mot de paase de l'utilisateur">
+                     <padding>
+                        <Insets bottom="10.0" top="30.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="842.0" styleClass="profile_edit_sous_titre" text="Modifier votre mot de passe" textFill="#383838">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tf_password" layoutX="10.0" layoutY="864.0" prefHeight="0.0" styleClass="profile_edit_tf">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#Save" prefHeight="34.0" prefWidth="2344.0" style="-fx-background-color: #331b9e;" styleClass="profile_edit_save_button" text="Sauvegarder" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane prefHeight="68.0" prefWidth="1458.0" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="700.0" style="-fx-background-color: #169EE3;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev_java.admin.AddUserController">
+   <children>
+      <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="700.0" prefWidth="680.0">
+         <content>
+            <VBox fx:id="vbox" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="680.0" style="-fx-background-color: #ffffff;" styleClass="blue-panel" stylesheets="@../../styles/Styles.css">
+               <children>
+                  <HBox>
+                     <children>
+                        <Button fx:id="btn_retour" contentDisplay="CENTER" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #331b9e;" text="Retour" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <ImageView fitHeight="90.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/user.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Ajouter utilisateur" textFill="#331b9e">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="15.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="221.0" prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="tf_nom" promptText="Nom" styleClass="tf_box" HBox.hgrow="ALWAYS" />
+                        <FontAwesomeIconView glyphName="USER" size="1.2EM" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <Label fx:id="nom_validator" prefHeight="18.0" prefWidth="648.0" text="Label" textFill="RED" visible="false">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="288.0" prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="tf_prenom" promptText="Prenom" styleClass="tf_box" HBox.hgrow="ALWAYS" />
+                        <FontAwesomeIconView glyphName="USER" size="1.2EM" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <Label fx:id="prenom_validator" prefHeight="18.0" prefWidth="648.0" text="Label" textFill="RED" visible="false">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="tf_email" promptText="Email" styleClass="tf_box" HBox.hgrow="ALWAYS" />
+                        <FontAwesomeIconView glyphName="USER" size="1.2EM" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <Label fx:id="email_validator" layoutX="26.0" layoutY="383.0" prefHeight="18.0" prefWidth="648.0" text="Label" textFill="RED" visible="false">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="245.0" prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <PasswordField fx:id="tf_pwd" promptText="Mot De Passe" styleClass="tf_box" HBox.hgrow="ALWAYS" />
+                        <FontAwesomeIconView glyphName="LOCK" size="1.2EM" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <Label fx:id="pwd_validator" layoutX="26.0" layoutY="468.0" prefHeight="18.0" prefWidth="648.0" text="Label" textFill="RED" visible="false">
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <PasswordField fx:id="tf_confirm_pwd" promptText="Confirmer Mot De Passe" styleClass="tf_box" HBox.hgrow="ALWAYS" />
+                        <FontAwesomeIconView glyphName="LOCK" size="1.2EM" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <Label fx:id="confirm_pwd_validator1" prefHeight="18.0" prefWidth="648.0" text="Label" textFill="RED" visible="false">
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="tf_numtel" prefHeight="26.0" prefWidth="646.0" promptText="Numero de telephone" />
+                        <FontAwesomeIconView glyphName="PHONE" size="1.2EM" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  <Label fx:id="numtel_validator" prefHeight="18.0" prefWidth="648.0" text="Label" textFill="RED" visible="false">
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="btn_signup" mnemonicParsing="false" onAction="#SignUp" prefHeight="50.0" prefWidth="420.0" style="-fx-background-color: #331b9e;" styleClass="blue-btn" text="Valider" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="compte_validator" alignment="CENTER" layoutX="26.0" layoutY="542.0" prefHeight="18.0" prefWidth="648.0" text="Label" textFill="RED" visible="false">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
