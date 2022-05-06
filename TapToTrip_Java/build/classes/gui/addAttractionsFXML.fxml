@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -11,6 +12,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="890.0" prefWidth="1439.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddAttractionsFXMLController">
@@ -113,17 +115,17 @@
       </AnchorPane>
      
       <Label fx:id="pont" layoutX="311.0" layoutY="320.0" />
-      <Label layoutX="483.0" layoutY="474.0" text="Nom attraction :">
+      <Label layoutX="483.0" layoutY="423.0" text="Nom attraction :">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="483.0" layoutY="548.0" text="Lieu :">
+      <Label layoutX="483.0" layoutY="497.0" text="Lieu :">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="483.0" layoutY="623.0" text="Description :">
+      <Label layoutX="483.0" layoutY="572.0" text="Description :">
          <font>
             <Font size="20.0" />
          </font>
@@ -139,16 +141,16 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="NomAttraction" layoutX="763.0" layoutY="474.0" prefHeight="31.0" prefWidth="423.0" />
-      <TextField fx:id="LieuAttraction" layoutX="763.0" layoutY="548.0" prefHeight="31.0" prefWidth="423.0" />
-      <TextArea fx:id="DescriptionAttraction" layoutX="763.0" layoutY="623.0" prefHeight="103.0" prefWidth="423.0" />
-      <Button cancelButton="true" layoutX="991.0" layoutY="768.0" mnemonicParsing="false" onAction="#AnnulerAjoutAttraction" prefHeight="31.0" prefWidth="195.0" text="Annuler" />
+      <TextField fx:id="NomAttraction" layoutX="763.0" layoutY="423.0" prefHeight="31.0" prefWidth="423.0" />
+      <TextField fx:id="LieuAttraction" layoutX="763.0" layoutY="497.0" prefHeight="31.0" prefWidth="423.0" />
+      <TextArea fx:id="DescriptionAttraction" layoutX="763.0" layoutY="572.0" prefHeight="103.0" prefWidth="423.0" />
+      <Button cancelButton="true" layoutX="981.0" layoutY="792.0" mnemonicParsing="false" onAction="#AnnulerAjoutAttraction" prefHeight="31.0" prefWidth="205.0" text="Annuler" />
       <Hyperlink layoutX="307.0" layoutY="314.0" onAction="#BoutonBack" prefHeight="29.0" prefWidth="153.0" text="&lt;- Revenir à la liste">
          <font>
             <Font size="16.0" />
          </font>
       </Hyperlink>
-      <Button cancelButton="true" defaultButton="true" layoutX="780.0" layoutY="768.0" mnemonicParsing="false" onAction="#AjouterAttraction" prefHeight="31.0" prefWidth="195.0" text="Ajouter" />
+      <Button cancelButton="true" defaultButton="true" layoutX="763.0" layoutY="792.0" mnemonicParsing="false" onAction="#AjouterAttraction" prefHeight="31.0" prefWidth="205.0" text="Ajouter" />
       <ImageView fitHeight="311.0" fitWidth="1158.0" layoutX="294.0">
          <image>
             <Image url="@../Images/bg_1.jpg" />
@@ -174,6 +176,17 @@
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1255.0" layoutY="34.0">
          <image>
             <Image url="@../Images/logout-sign-icon-log-out-symbol-arrow-vector-2682061.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="rectangle_recaptcha1" arcHeight="5.0" arcWidth="5.0" fill="#e9e9e9" height="82.0" layoutX="763.0" layoutY="697.0" stroke="BLACK" strokeType="INSIDE" width="423.0" />
+      <CheckBox fx:id="checkbox_recaptcha" layoutX="797.0" layoutY="707.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="277.0" text=" I'am not a robot" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </CheckBox>
+      <ImageView fitHeight="76.0" fitWidth="78.0" layoutX="1096.0" layoutY="700.0">
+         <image>
+            <Image url="@../Images/1024px-RecaptchaLogo.svg.png" />
          </image>
       </ImageView>
    </children>

@@ -18,10 +18,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -37,7 +40,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.Callback;
+import javafx.util.Duration;
 import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
 import services.AttractionService;
 import services.VoyageService;
 
@@ -86,6 +91,8 @@ public class ListVoyagesFXMLController implements Initializable {
     private TableColumn<Voyage, String> Col_image;
     @FXML
     private TableColumn<Voyage, Integer> Col_idAttr;
+    @FXML
+    private TextField searchVoyage;
 
     /**
      * Initializes the controller class.
@@ -140,7 +147,14 @@ public class ListVoyagesFXMLController implements Initializable {
                     } catch (SQLException ex) {
                         Logger.getLogger(ListVoyagesFXMLController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                     JOptionPane.showMessageDialog(null, "voyage organisé supprimé avec succès!");
+                     //JOptionPane.showMessageDialog(null, "voyage organisé supprimé avec succès!");
+                            Notifications notif = Notifications.create()
+                            .title("Notification")
+                            .text("Voyage organisé supprimé avec succés!")
+                            .graphic(null)
+                            .hideAfter(Duration.seconds(4))
+                            .position(Pos.TOP_LEFT);
+                            notif.show();
                      
                      // REFRESH DE LA TABLEVIEW
                      ObservableList<Voyage> db=FXCollections.observableArrayList(vs.afficherVoyages());  
@@ -230,7 +244,10 @@ public class ListVoyagesFXMLController implements Initializable {
         
         Col_modif.setCellFactory(cellFactory1);
         table_Voyage.setItems(db);
-    }    
+      
+    }  
+    
+   
 
     
     private void listeVoyage(SortEvent<Voyage> event) {
@@ -355,6 +372,17 @@ public class ListVoyagesFXMLController implements Initializable {
         }
         ObservableList<Attraction> choices = FXCollections.observableArrayList(nomAtt);
         comboAttr.setItems(choices);
+    }
+
+    @FXML
+    private void statVoyages(ActionEvent event) {
+         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("StatVoyages.fxml"));
+            Parent root = loader.load();
+            pont.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ListAttractionsFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

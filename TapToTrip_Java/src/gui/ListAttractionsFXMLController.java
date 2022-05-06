@@ -21,6 +21,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -35,7 +36,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.Callback;
+import javafx.util.Duration;
 import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
 import services.AttractionService;
 
 /**
@@ -113,7 +116,15 @@ public class ListAttractionsFXMLController implements Initializable {
                      //extraire les infos de la ligne selectionnée
                      Attraction att = getTableView().getItems().get(getIndex());
                      as.supprimerAttraction(att);
-                     JOptionPane.showMessageDialog(null, "Attraction supprimée avec succés!");
+                     
+                    Notifications notif = Notifications.create()
+                    .title("Notification")
+                    .text("Attraction supprimée avec succés!")
+                    .graphic(null)
+                    .hideAfter(Duration.seconds(4))
+                    .position(Pos.TOP_LEFT);
+                    notif.show();
+                    //JOptionPane.showMessageDialog(null, "Attraction supprimée avec succés!");
                      
                      // REFRESH DE LA TABLEVIEW
                      ObservableList<Attraction> db=FXCollections.observableArrayList(as.afficherAttractions());  
@@ -189,8 +200,8 @@ public class ListAttractionsFXMLController implements Initializable {
               
                     
                     }
-                     //sa.update(act,act.getId_categorie());
-                    // JOptionPane.showMessageDialog(null, "catégorie modifiée !");
+                   
+                    //JOptionPane.showMessageDialog(null, "catégorie modifiée !");
                  });
              }
             };
@@ -275,7 +286,7 @@ public class ListAttractionsFXMLController implements Initializable {
             Parent root = loader.load();
             pont.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(ListAttractionsFXMLController.class.getName()).log(Level.SEVERE, null, ex);       
+                System.out.println(ex.getMessage());
         }
     }
 

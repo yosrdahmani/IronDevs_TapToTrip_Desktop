@@ -21,6 +21,8 @@ import utils.MyDB;
  *
  * @author DELL
  */
+
+
 public class AttractionService implements AService<Attraction> {
     
     Connection con;

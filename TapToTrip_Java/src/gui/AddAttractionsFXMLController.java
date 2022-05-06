@@ -16,14 +16,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 import javax.swing.JOptionPane;
 import services.AttractionService;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -42,6 +47,10 @@ public class AddAttractionsFXMLController implements Initializable {
     private TextArea DescriptionAttraction;
     @FXML
     private Button pont1;
+    @FXML
+    private Rectangle rectangle_recaptcha1;
+    @FXML
+    private CheckBox checkbox_recaptcha;
 
     /**
      * Initializes the controller class.
@@ -97,27 +106,40 @@ public class AddAttractionsFXMLController implements Initializable {
 
     @FXML
     private void AjouterAttraction(ActionEvent event) {
+         if(!checkbox_recaptcha.isSelected()||NomAttraction.getText().equals("")||LieuAttraction.getText().equals("")||DescriptionAttraction.getText().equals(""))
+             {
+                JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs!");
+                checkbox_recaptcha.setStyle("-fx-border-color:red"); 
+                   
+             }
+         
+        else 
+        {
+             checkbox_recaptcha.setStyle("-fx-border-color:transparent");
         
         AttractionService as = new AttractionService();
-          if (NomAttraction.getText().equals("")||LieuAttraction.getText().equals("")||DescriptionAttraction.getText().equals(""))
-       {
-           JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs!");
-       } 
-        
-          else { 
-              Attraction att = new Attraction(NomAttraction.getText(), LieuAttraction.getText(), DescriptionAttraction.getText() );
+        Attraction att = new Attraction(NomAttraction.getText(), LieuAttraction.getText(), DescriptionAttraction.getText() );
           
         as.ajouterAttraction(att);
+
+                    Notifications notif = Notifications.create()
+                    .title("Notification")
+                    .text("Attraction ajoutée avec succés!")
+                    .graphic(null)
+                    .hideAfter(Duration.seconds(4))
+                    .position(Pos.TOP_LEFT);
+                    notif.show();
         
-        Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
+        /*Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Succes");
         alert.setContentText("Attraction ajoutée avec succes! ");
-        alert.show();
+        alert.show();*/
         
         NomAttraction.setText("");
         LieuAttraction.setText("");
         DescriptionAttraction.setText("");
-          }
+          
+        }
     }
 
     @FXML

@@ -42,12 +42,17 @@
                      <children>
                         <HBox alignment="CENTER" layoutX="19.0" layoutY="119.0" prefHeight="60.0" prefWidth="321.0">
                            <children>
-                              <TextField prefHeight="40.0" prefWidth="155.0" promptText="Rechercher ..." styleClass="transparent" stylesheets="@frontvoyage.css">
+                              <HBox prefHeight="60.0" prefWidth="37.0" />
+                              <ImageView fitHeight="34.0" fitWidth="42.0">
+                                 <image>
+                                    <Image url="@../Images/chercher.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="searchVoyage" onKeyPressed="#recherche" prefHeight="40.0" prefWidth="287.0" promptText="Chercher votre destination ..." styleClass="transparent" stylesheets="@frontvoyage.css">
                                  <font>
                                     <Font name="Cambria" size="18.0" />
                                  </font>
                               </TextField>
-                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" styleClass="search-button" stylesheets="@frontvoyage.css" text="Rechercher" textFill="WHITE" />
                            </children>
                            <styleClass>
                               <String fx:value="search-box" />
@@ -60,48 +65,31 @@
                      <children>
                         <VBox alignment="CENTER" layoutX="16.0" layoutY="-177.0" prefHeight="535.0" prefWidth="330.0">
                            <children>
-                              <Label prefHeight="53.0" prefWidth="167.0" text="Trier par " textFill="#656464" underline="true">
+                              <Label prefHeight="53.0" prefWidth="258.0" text="  Trier les voyages par   " textFill="#656464" underline="true">
                                  <font>
                                     <Font name="Cambria" size="24.0" />
                                  </font>
                               </Label>
-                              <HBox prefHeight="60.0" prefWidth="335.0">
-                                 <VBox.margin>
-                                    <Insets left="20.0" top="30.0" />
-                                 </VBox.margin>
-                                 <children>
-                                    <Label prefHeight="53.0" prefWidth="253.0" text="Destination " textFill="#656464">
-                                       <font>
-                                          <Font name="Cambria" size="24.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0">
-                                 <VBox.margin>
-                                    <Insets top="20.0" />
-                                 </VBox.margin>
-                                 <children>
-                                    <Label prefHeight="53.0" prefWidth="291.0" text="Prix" textFill="#656464">
-                                       <font>
-                                          <Font name="Cambria" size="24.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0">
-                                 <children>
-                                    <Label prefHeight="53.0" prefWidth="167.0" text="Kg" textFill="WHITE">
-                                       <font>
-                                          <Font name="Cambria" size="24.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@frontvoyage.css" text="Trier" textFill="WHITE">
-                                 <VBox.margin>
-                                    <Insets bottom="20.0" top="30.0" />
-                                 </VBox.margin>
+                              <VBox prefHeight="33.0" prefWidth="330.0" />
+                              <Button mnemonicParsing="false" onAction="#triDestA" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@frontvoyage.css" text="Destination ↑" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <VBox prefHeight="32.0" prefWidth="330.0" />
+                              <Button mnemonicParsing="false" onAction="#triDestD" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@frontvoyage.css" text="Destination ↓" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <VBox prefHeight="31.0" prefWidth="330.0" />
+                              <Button mnemonicParsing="false" onAction="#triPrixA" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@frontvoyage.css" text="Prix ↑" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <VBox prefHeight="31.0" prefWidth="330.0" />
+                              <Button mnemonicParsing="false" onAction="#triPrixD" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@frontvoyage.css" text="Prix ↓" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
@@ -182,7 +170,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0" />
                   <AnchorPane prefHeight="657.0" prefWidth="1080.0">
                      <children>
-                        <ScrollPane layoutX="37.0" layoutY="134.0" prefHeight="491.0" prefWidth="1018.0">
+                        <ScrollPane fx:id="scrollPaneVoyage" layoutX="37.0" layoutY="134.0" prefHeight="491.0" prefWidth="1018.0">
                            <content>
                               <GridPane fx:id="voyageContainer">
                                 <rowConstraints>

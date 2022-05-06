@@ -16,6 +16,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -34,6 +37,8 @@ public class AccueilBackController implements Initializable {
     private Label pont;
     @FXML
     private Button pont1;
+    @FXML
+
 
     /**
      * Initializes the controller class.

@@ -5,6 +5,7 @@
  */
 package gui;
 
+import com.google.zxing.WriterException;
 import entities.Attraction;
 import entities.Voyage;
 import java.io.File;
@@ -26,6 +27,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -34,8 +36,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
 import services.AttractionService;
 import services.VoyageService;
 
@@ -87,7 +91,7 @@ public class AddVoyageFXMLController implements Initializable {
     }
 
     @FXML
-    private void AjouterVoyage(ActionEvent event) {
+    private void AjouterVoyage(ActionEvent event) throws WriterException, IOException {
          VoyageService vs = new VoyageService();
          if (DestinationVoyage.getText().equals("")||DureeVoyage.getText().equals("")||ProgrammeVoyage.getText().equals("")||HotelVoyage.getText().equals("")||PrixVoyage.getText().equals(""))
        {
@@ -128,10 +132,16 @@ public class AddVoyageFXMLController implements Initializable {
        else if (validatePr()){
           Attraction att = ComboBoxAttraction.getSelectionModel().getSelectedItem();
           int id=att.getId(); 
-         //pps.ajouter(new Produit(Nom_ProduitPlat.getText(),Prix.getText(), Desc_ProduitPlat.getText(),qte.getText()));
            vs.ajouterVoyage(new Voyage(DestinationVoyage.getText(),DureeVoyage.getText(),ProgrammeVoyage.getText(),imgname,HotelVoyage.getText(),PrixVoyage.getText(),id));
-       // pps.add(new Produit(Nom_ProduitPlat.getText(),Double.parseDouble(Prix.getText()),Integer.parseInt(qte.getText()),Desc_ProduitPlat.getText(),id));
-           JOptionPane.showMessageDialog(null, "Voyage organisé ajouté avec succés!");
+           vs.qr(new Voyage(DestinationVoyage.getText(),DureeVoyage.getText(),ProgrammeVoyage.getText(),imgname,HotelVoyage.getText(),PrixVoyage.getText(),id));
+           //JOptionPane.showMessageDialog(null, "Voyage organisé ajouté avec succés!");
+                    Notifications notif = Notifications.create()
+                    .title("Notification")
+                    .text("Voyage organisé ajouté avec succés!")
+                    .graphic(null)
+                    .hideAfter(Duration.seconds(4))
+                    .position(Pos.TOP_LEFT);
+                    notif.show();
        }
 
     }
